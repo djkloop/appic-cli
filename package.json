@@ -1,0 +1,19 @@
+{
+  "name": "typescript-composite-lerna",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "bootstrap": "yarn && lerna bootstrap --ignore-scripts && npm run build",
+    "build": "tsc --build packages/tsconfig.project.json",
+    "watch": "tsc --build --watch packages/tsconfig.project.json",
+    "update:tsconfig.json": "ts-node scripts/update-package-tsconfig.ts",
+    "update:package.json": "ts-node scripts/update-package-json.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^13.13.0",
+    "lerna": "^3.20.2",
+    "typescript": "^3.8.3",
+    "ts-node": "^8.8.2"
+  },
+  "workspaces": ["packages/*"]
+}
